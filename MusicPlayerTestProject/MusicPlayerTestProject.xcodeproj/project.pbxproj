@@ -1,0 +1,417 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CED79AC528C259170042BD32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED79AC428C259170042BD32 /* AppDelegate.swift */; };
+		CED79AC728C259170042BD32 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED79AC628C259170042BD32 /* SceneDelegate.swift */; };
+		CED79AC928C259170042BD32 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED79AC828C259170042BD32 /* MainViewController.swift */; };
+		CED79ACC28C259170042BD32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED79ACA28C259170042BD32 /* Main.storyboard */; };
+		CED79ACE28C2591E0042BD32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED79ACD28C2591E0042BD32 /* Assets.xcassets */; };
+		CED79AD128C2591E0042BD32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED79ACF28C2591E0042BD32 /* LaunchScreen.storyboard */; };
+		CED79ADC28C357210042BD32 /* Miyagi & Andy Panda - Там ревели горы.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CED79ADB28C357210042BD32 /* Miyagi & Andy Panda - Там ревели горы.mp3 */; };
+		CED79ADE28C3572A0042BD32 /* Nicki Minaj, Labrinth feat. Eminem - Majesty.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CED79ADD28C3572A0042BD32 /* Nicki Minaj, Labrinth feat. Eminem - Majesty.mp3 */; };
+		CED79AE028C3573D0042BD32 /* Jason Derulo feat. Snoop Dogg - Wiggle (feat. Snoop Dogg).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CED79ADF28C3573D0042BD32 /* Jason Derulo feat. Snoop Dogg - Wiggle (feat. Snoop Dogg).mp3 */; };
+		CED79AE228C357620042BD32 /* MusicEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED79AE128C357610042BD32 /* MusicEnum.swift */; };
+		CED79AE628C366BF0042BD32 /* MainViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED79AE528C366BF0042BD32 /* MainViewController+Views.swift */; };
+		CED79AE828C4C16D0042BD32 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED79AE728C4C16D0042BD32 /* Music.swift */; };
+		CED79AEA28C8A7C60042BD32 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED79AE928C8A7C60042BD32 /* CustomCollectionViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CED79AC128C259170042BD32 /* MusicPlayerTestProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicPlayerTestProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CED79AC428C259170042BD32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CED79AC628C259170042BD32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CED79AC828C259170042BD32 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		CED79ACB28C259170042BD32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CED79ACD28C2591E0042BD32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CED79AD028C2591E0042BD32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CED79AD228C2591E0042BD32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CED79ADB28C357210042BD32 /* Miyagi & Andy Panda - Там ревели горы.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Miyagi & Andy Panda - Там ревели горы.mp3"; path = "../../../Miyagi & Andy Panda - Там ревели горы.mp3"; sourceTree = "<group>"; };
+		CED79ADD28C3572A0042BD32 /* Nicki Minaj, Labrinth feat. Eminem - Majesty.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Nicki Minaj, Labrinth feat. Eminem - Majesty.mp3"; sourceTree = "<group>"; };
+		CED79ADF28C3573D0042BD32 /* Jason Derulo feat. Snoop Dogg - Wiggle (feat. Snoop Dogg).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Jason Derulo feat. Snoop Dogg - Wiggle (feat. Snoop Dogg).mp3"; sourceTree = "<group>"; };
+		CED79AE128C357610042BD32 /* MusicEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicEnum.swift; sourceTree = "<group>"; };
+		CED79AE528C366BF0042BD32 /* MainViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Views.swift"; sourceTree = "<group>"; };
+		CED79AE728C4C16D0042BD32 /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		CED79AE928C8A7C60042BD32 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CED79ABE28C259170042BD32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CED79AB828C259170042BD32 = {
+			isa = PBXGroup;
+			children = (
+				CED79AC328C259170042BD32 /* MusicPlayerTestProject */,
+				CED79AC228C259170042BD32 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CED79AC228C259170042BD32 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CED79AC128C259170042BD32 /* MusicPlayerTestProject.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CED79AC328C259170042BD32 /* MusicPlayerTestProject */ = {
+			isa = PBXGroup;
+			children = (
+				CED79AE328C366750042BD32 /* ViewControllers */,
+				CED79ADA28C356FC0042BD32 /* MusicAssets */,
+				CED79AC428C259170042BD32 /* AppDelegate.swift */,
+				CED79AC628C259170042BD32 /* SceneDelegate.swift */,
+				CED79ACA28C259170042BD32 /* Main.storyboard */,
+				CED79ACD28C2591E0042BD32 /* Assets.xcassets */,
+				CED79ACF28C2591E0042BD32 /* LaunchScreen.storyboard */,
+				CED79AD228C2591E0042BD32 /* Info.plist */,
+				CED79AE128C357610042BD32 /* MusicEnum.swift */,
+				CED79AE728C4C16D0042BD32 /* Music.swift */,
+				CED79AE928C8A7C60042BD32 /* CustomCollectionViewCell.swift */,
+			);
+			path = MusicPlayerTestProject;
+			sourceTree = "<group>";
+		};
+		CED79ADA28C356FC0042BD32 /* MusicAssets */ = {
+			isa = PBXGroup;
+			children = (
+				CED79ADB28C357210042BD32 /* Miyagi & Andy Panda - Там ревели горы.mp3 */,
+				CED79ADD28C3572A0042BD32 /* Nicki Minaj, Labrinth feat. Eminem - Majesty.mp3 */,
+				CED79ADF28C3573D0042BD32 /* Jason Derulo feat. Snoop Dogg - Wiggle (feat. Snoop Dogg).mp3 */,
+			);
+			path = MusicAssets;
+			sourceTree = "<group>";
+		};
+		CED79AE328C366750042BD32 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CED79AE428C366860042BD32 /* ViewController+Exteinsion */,
+				CED79AC828C259170042BD32 /* MainViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CED79AE428C366860042BD32 /* ViewController+Exteinsion */ = {
+			isa = PBXGroup;
+			children = (
+				CED79AE528C366BF0042BD32 /* MainViewController+Views.swift */,
+			);
+			path = "ViewController+Exteinsion";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CED79AC028C259170042BD32 /* MusicPlayerTestProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CED79AD528C2591E0042BD32 /* Build configuration list for PBXNativeTarget "MusicPlayerTestProject" */;
+			buildPhases = (
+				CED79ABD28C259170042BD32 /* Sources */,
+				CED79ABE28C259170042BD32 /* Frameworks */,
+				CED79ABF28C259170042BD32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MusicPlayerTestProject;
+			productName = MusicPlayerTestProject;
+			productReference = CED79AC128C259170042BD32 /* MusicPlayerTestProject.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CED79AB928C259170042BD32 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					CED79AC028C259170042BD32 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = CED79ABC28C259170042BD32 /* Build configuration list for PBXProject "MusicPlayerTestProject" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CED79AB828C259170042BD32;
+			productRefGroup = CED79AC228C259170042BD32 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CED79AC028C259170042BD32 /* MusicPlayerTestProject */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CED79ABF28C259170042BD32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CED79ADC28C357210042BD32 /* Miyagi & Andy Panda - Там ревели горы.mp3 in Resources */,
+				CED79AD128C2591E0042BD32 /* LaunchScreen.storyboard in Resources */,
+				CED79AE028C3573D0042BD32 /* Jason Derulo feat. Snoop Dogg - Wiggle (feat. Snoop Dogg).mp3 in Resources */,
+				CED79ADE28C3572A0042BD32 /* Nicki Minaj, Labrinth feat. Eminem - Majesty.mp3 in Resources */,
+				CED79ACE28C2591E0042BD32 /* Assets.xcassets in Resources */,
+				CED79ACC28C259170042BD32 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CED79ABD28C259170042BD32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CED79AE228C357620042BD32 /* MusicEnum.swift in Sources */,
+				CED79AEA28C8A7C60042BD32 /* CustomCollectionViewCell.swift in Sources */,
+				CED79AC928C259170042BD32 /* MainViewController.swift in Sources */,
+				CED79AE628C366BF0042BD32 /* MainViewController+Views.swift in Sources */,
+				CED79AC528C259170042BD32 /* AppDelegate.swift in Sources */,
+				CED79AC728C259170042BD32 /* SceneDelegate.swift in Sources */,
+				CED79AE828C4C16D0042BD32 /* Music.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CED79ACA28C259170042BD32 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CED79ACB28C259170042BD32 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CED79ACF28C2591E0042BD32 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CED79AD028C2591E0042BD32 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CED79AD328C2591E0042BD32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CED79AD428C2591E0042BD32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CED79AD628C2591E0042BD32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MusicPlayerTestProject/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.MusicPlayerTestProject";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		CED79AD728C2591E0042BD32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MusicPlayerTestProject/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "-.MusicPlayerTestProject";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CED79ABC28C259170042BD32 /* Build configuration list for PBXProject "MusicPlayerTestProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CED79AD328C2591E0042BD32 /* Debug */,
+				CED79AD428C2591E0042BD32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CED79AD528C2591E0042BD32 /* Build configuration list for PBXNativeTarget "MusicPlayerTestProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CED79AD628C2591E0042BD32 /* Debug */,
+				CED79AD728C2591E0042BD32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CED79AB928C259170042BD32 /* Project object */;
+}
