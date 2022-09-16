@@ -6,41 +6,26 @@ extension MainViewController {
         
         //MARK: - Properties
         
-        let miyagi = Music(nameMusic: "Там ревели горы",
-                           nameArtist: "Miyagi & Andy Panda",
-                           currentTime: 0.0,
-                           fullTime: 0.0,
-                           image: PictureURL.miyagi.getPicture,
-                           audio: AudioURL.miyagiAudio.getAudio)
-        let snoopDoogg = Music(nameMusic: "Wiggle (feat. Snoop Dogg)",
-                               nameArtist: "Jason Derulo & Snoop Dogg" ,
-                               currentTime: 0.0,
-                               fullTime: 0.0,
-                               image: PictureURL.snoopDogg.getPicture,
-                               audio: AudioURL.snoopDoggAudio.getAudio)
-        let nickiMinaj = Music(nameMusic: "Majesty",
-                               nameArtist: "Nicki Minaj, Labrinth feat. Eminem ",
-                               currentTime: 0.0,
-                               fullTime: 0.0,
-                               image: PictureURL.nickiMinaj.getPicture,
-                               audio: AudioURL.nickiMinajAudio.getAudio)
-        lazy var musicClass = [miyagi, snoopDoogg, nickiMinaj]
-        
-        let songDescription = UIStackView()
-        let songTime = UIStackView()
-        let fullTimeOfSong = UILabel()
-        let correctTimeOfSong = UILabel()
-        let songName = UILabel()
-        let artistName = UILabel()
         let playButton = UIButton()
         let forwardButton = UIButton()
         let backwardButton = UIButton()
-        let circle = UILabel()
-        let slider = UISlider()
         
         var numberOfMusic = 0
         var player: AVAudioPlayer?
-        var timer: Timer?
+        lazy var musicClass = [miyagi, snoopDoogg, nickiMinaj]
+        
+        //MARK: - Private properties
+        
+        private let songDescription = UIStackView()
+        private let songTime = UIStackView()
+        private let fullTimeOfSong = UILabel()
+        private let correctTimeOfSong = UILabel()
+        private let songName = UILabel()
+        private let artistName = UILabel()
+        private let circle = UILabel()
+        private let slider = UISlider()
+        
+        private var timer: Timer?
         
         //MARK: - Methods
         
@@ -54,34 +39,6 @@ extension MainViewController {
             configureTimer()
             setUpForwardButtonLayout(view)
             setUpBackwardButtonLayout(view)
-        }
-        
-        //MARK: - Private methods
-        
-        private func configureTimer() {
-            timer = Timer.scheduledTimer(timeInterval: 0.0001, target: self, selector: #selector(updateSlider), userInfo: nil, repeats: true)
-        }
-        
-        private func setUpSongTimeLayout(_ view: UIView) {
-            view.addSubview(songTime)
-            
-            songTime.translatesAutoresizingMaskIntoConstraints = false
-            songTime.addArrangedSubview(correctTimeOfSong)
-            songTime.addArrangedSubview(fullTimeOfSong)
-            songTime.axis = .horizontal
-            songTime.distribution = .equalCentering
-            
-            fullTimeOfSong.text = "0:0"
-            fullTimeOfSong.textColor = .systemGray
-            
-            correctTimeOfSong.text = "0:0"
-            correctTimeOfSong.textColor = .systemGray
-            
-            NSLayoutConstraint.activate([
-                songTime.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-                songTime.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-                songTime.topAnchor.constraint(equalTo: slider.bottomAnchor, constant: 10),
-            ])
         }
         
         func setUpSongDesctiptionLayout(_ view: UIView, numberOfMusic: Int) {
@@ -118,6 +75,31 @@ extension MainViewController {
             } catch {
                 print("ViewController-AVAudioSession-failed")
             }
+        }
+        
+        //MARK: - Private methods
+        
+        private func configureTimer() {
+            timer = Timer.scheduledTimer(timeInterval: 0.0001, target: self, selector: #selector(updateSlider), userInfo: nil, repeats: true)
+        }
+        
+        private func setUpSongTimeLayout(_ view: UIView) {
+            view.addSubview(songTime)
+            
+            songTime.translatesAutoresizingMaskIntoConstraints = false
+            songTime.addArrangedSubview(correctTimeOfSong)
+            songTime.addArrangedSubview(fullTimeOfSong)
+            songTime.axis = .horizontal
+            songTime.distribution = .equalCentering
+            
+            fullTimeOfSong.textColor = .systemGray
+            correctTimeOfSong.textColor = .systemGray
+            
+            NSLayoutConstraint.activate([
+                songTime.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+                songTime.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+                songTime.topAnchor.constraint(equalTo: slider.bottomAnchor, constant: 10),
+            ])
         }
         
         private func setUpCircle(_ view: UIView) {
@@ -200,7 +182,7 @@ extension MainViewController {
             ])
         }
         
-        func getFormattedTime(timeInterval: TimeInterval) -> String {
+        private func getFormattedTime(timeInterval: TimeInterval) -> String {
             let mins = timeInterval / 60
             let secs = timeInterval.truncatingRemainder(dividingBy: 60)
             
@@ -225,7 +207,7 @@ extension MainViewController {
         
         //MARK: - Action
         
-        @objc func updateSlider() {
+        @objc private func updateSlider() {
             guard let player = player else { return }
             slider.value = Float(player.currentTime)
             slider.maximumValue = Float(player.duration)
@@ -235,7 +217,7 @@ extension MainViewController {
             fullTimeOfSong.text = getFormattedTime(timeInterval: remainingTimeInSconds)
         }
         
-        @objc func scrubbingSlider() {
+        @objc private func scrubbingSlider() {
             guard let player = player else { return }
             player.currentTime = Float64(slider.value)
             player.play()

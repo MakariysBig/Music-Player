@@ -1,14 +1,15 @@
 import UIKit
 import AVFoundation
 
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
     
     //MARK: - Properties
     
-    let views = Views()
-    let swipeGesture = UISwipeGestureRecognizer()
-    var index = 0
-    let layout = UICollectionViewFlowLayout()
+    private let views = Views()
+    private var index = 0
+    private let layout = UICollectionViewFlowLayout()
+    
+    //MARK: - Override properties
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UIStatusBarStyle.lightContent
@@ -22,10 +23,6 @@ class MainViewController: UIViewController {
         views.loadViews(view)
         setUpTarget()
         setUpCollectionViewLayout()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
     }
     
     //MARK: - Private methods
@@ -63,7 +60,7 @@ class MainViewController: UIViewController {
     
     //MARK: - Action
     
-    @objc func tapNextSongAction() {
+    @objc private func tapNextSongAction() {
         let count = views.musicClass.count - 1
         
         if views.numberOfMusic < count {
@@ -88,7 +85,7 @@ class MainViewController: UIViewController {
         }
     }
     
-    @objc func tapPreviousSongAction() {
+    @objc private func tapPreviousSongAction() {
         let count = views.musicClass.count - 1
 
         if views.numberOfMusic == 0 {
@@ -113,7 +110,7 @@ class MainViewController: UIViewController {
         }
     }
     
-    @objc func tapPlayButton() {
+    @objc private func tapPlayButton() {
         guard let player = views.player else { return }
 
         if player.isPlaying {
@@ -138,7 +135,6 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCollectionViewCell", for: indexPath) as? CustomCollectionViewCell else { return UICollectionViewCell() }
         let picture = UIImage(named: views.musicClass[indexPath.row].image)
-//        index = indexPath.row
         
         cell.image.image = picture
 
@@ -155,21 +151,8 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         targetContentOffset.pointee = scrollView.contentOffset
+        let indexPath = IndexPath(row: index, section: 0)
         
-        let didUseSwipeToSkipCell = false
-        
-        if didUseSwipeToSkipCell {
-            
-            
-            
-        } else {
-            let indexPath = IndexPath(row: index, section: 0)
-
-            layout.collectionView?.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        }
-        
-        
+        layout.collectionView?.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
-    
-   
 }
