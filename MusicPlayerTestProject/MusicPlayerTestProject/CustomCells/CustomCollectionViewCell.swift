@@ -1,10 +1,13 @@
 import UIKit
 
-class CustomCollectionViewCell: UICollectionViewCell {
+final class CustomCollectionViewCell: UICollectionViewCell {
+    
+    //MARK: - Private properties
     
     let image = UIImageView()
-    let coverView = UIView()
-    let picture = UIImage(named: PictureURL.miyagi.getPicture)
+    private let coverView = UIView()
+    
+    //MARK: - Initialaizing
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -15,6 +18,8 @@ class CustomCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    //MARK: - Private methods
     
     private func setUpLayout() {
         coverView.addSubview(image)
@@ -50,6 +55,8 @@ class CustomCollectionViewCell: UICollectionViewCell {
             coverView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
         ])
     }
+    
+    //MARK: - Override methods
     
     override func prepareForReuse() {
         super.prepareForReuse()

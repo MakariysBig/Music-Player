@@ -13,13 +13,13 @@
 		CED79ACC28C259170042BD32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED79ACA28C259170042BD32 /* Main.storyboard */; };
 		CED79ACE28C2591E0042BD32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED79ACD28C2591E0042BD32 /* Assets.xcassets */; };
 		CED79AD128C2591E0042BD32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED79ACF28C2591E0042BD32 /* LaunchScreen.storyboard */; };
-		CED79ADC28C357210042BD32 /* Miyagi & Andy Panda - Там ревели горы.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CED79ADB28C357210042BD32 /* Miyagi & Andy Panda - Там ревели горы.mp3 */; };
 		CED79ADE28C3572A0042BD32 /* Nicki Minaj, Labrinth feat. Eminem - Majesty.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CED79ADD28C3572A0042BD32 /* Nicki Minaj, Labrinth feat. Eminem - Majesty.mp3 */; };
 		CED79AE028C3573D0042BD32 /* Jason Derulo feat. Snoop Dogg - Wiggle (feat. Snoop Dogg).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CED79ADF28C3573D0042BD32 /* Jason Derulo feat. Snoop Dogg - Wiggle (feat. Snoop Dogg).mp3 */; };
 		CED79AE228C357620042BD32 /* MusicEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED79AE128C357610042BD32 /* MusicEnum.swift */; };
 		CED79AE628C366BF0042BD32 /* MainViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED79AE528C366BF0042BD32 /* MainViewController+Views.swift */; };
 		CED79AE828C4C16D0042BD32 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED79AE728C4C16D0042BD32 /* Music.swift */; };
 		CED79AEA28C8A7C60042BD32 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED79AE928C8A7C60042BD32 /* CustomCollectionViewCell.swift */; };
+		CEDD598528D4684100451E21 /* Miyagi & Andy Panda - Там ревели горы.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEDD598428D4684100451E21 /* Miyagi & Andy Panda - Там ревели горы.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,13 +31,13 @@
 		CED79ACD28C2591E0042BD32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CED79AD028C2591E0042BD32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CED79AD228C2591E0042BD32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CED79ADB28C357210042BD32 /* Miyagi & Andy Panda - Там ревели горы.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Miyagi & Andy Panda - Там ревели горы.mp3"; path = "../../../Miyagi & Andy Panda - Там ревели горы.mp3"; sourceTree = "<group>"; };
 		CED79ADD28C3572A0042BD32 /* Nicki Minaj, Labrinth feat. Eminem - Majesty.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Nicki Minaj, Labrinth feat. Eminem - Majesty.mp3"; sourceTree = "<group>"; };
 		CED79ADF28C3573D0042BD32 /* Jason Derulo feat. Snoop Dogg - Wiggle (feat. Snoop Dogg).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Jason Derulo feat. Snoop Dogg - Wiggle (feat. Snoop Dogg).mp3"; sourceTree = "<group>"; };
 		CED79AE128C357610042BD32 /* MusicEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicEnum.swift; sourceTree = "<group>"; };
 		CED79AE528C366BF0042BD32 /* MainViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Views.swift"; sourceTree = "<group>"; };
 		CED79AE728C4C16D0042BD32 /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
 		CED79AE928C8A7C60042BD32 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		CEDD598428D4684100451E21 /* Miyagi & Andy Panda - Там ревели горы.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Miyagi & Andy Panda - Там ревели горы.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,17 +70,11 @@
 		CED79AC328C259170042BD32 /* MusicPlayerTestProject */ = {
 			isa = PBXGroup;
 			children = (
+				CEDD598228D4666600451E21 /* Delegates */,
+				CEE9DA8728D45D3400AA5CD5 /* Models */,
 				CED79AE328C366750042BD32 /* ViewControllers */,
-				CED79ADA28C356FC0042BD32 /* MusicAssets */,
-				CED79AC428C259170042BD32 /* AppDelegate.swift */,
-				CED79AC628C259170042BD32 /* SceneDelegate.swift */,
-				CED79ACA28C259170042BD32 /* Main.storyboard */,
-				CED79ACD28C2591E0042BD32 /* Assets.xcassets */,
-				CED79ACF28C2591E0042BD32 /* LaunchScreen.storyboard */,
-				CED79AD228C2591E0042BD32 /* Info.plist */,
-				CED79AE128C357610042BD32 /* MusicEnum.swift */,
-				CED79AE728C4C16D0042BD32 /* Music.swift */,
-				CED79AE928C8A7C60042BD32 /* CustomCollectionViewCell.swift */,
+				CEE9DA8528D45C9E00AA5CD5 /* CustomCells */,
+				CEDD598328D466D100451E21 /* SupportingFiles */,
 			);
 			path = MusicPlayerTestProject;
 			sourceTree = "<group>";
@@ -88,7 +82,7 @@
 		CED79ADA28C356FC0042BD32 /* MusicAssets */ = {
 			isa = PBXGroup;
 			children = (
-				CED79ADB28C357210042BD32 /* Miyagi & Andy Panda - Там ревели горы.mp3 */,
+				CEDD598428D4684100451E21 /* Miyagi & Andy Panda - Там ревели горы.mp3 */,
 				CED79ADD28C3572A0042BD32 /* Nicki Minaj, Labrinth feat. Eminem - Majesty.mp3 */,
 				CED79ADF28C3573D0042BD32 /* Jason Derulo feat. Snoop Dogg - Wiggle (feat. Snoop Dogg).mp3 */,
 			);
@@ -110,6 +104,44 @@
 				CED79AE528C366BF0042BD32 /* MainViewController+Views.swift */,
 			);
 			path = "ViewController+Exteinsion";
+			sourceTree = "<group>";
+		};
+		CEDD598228D4666600451E21 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				CED79AC428C259170042BD32 /* AppDelegate.swift */,
+				CED79AC628C259170042BD32 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		CEDD598328D466D100451E21 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CED79ADA28C356FC0042BD32 /* MusicAssets */,
+				CED79AD228C2591E0042BD32 /* Info.plist */,
+				CED79ACA28C259170042BD32 /* Main.storyboard */,
+				CED79ACD28C2591E0042BD32 /* Assets.xcassets */,
+				CED79ACF28C2591E0042BD32 /* LaunchScreen.storyboard */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		CEE9DA8528D45C9E00AA5CD5 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				CED79AE928C8A7C60042BD32 /* CustomCollectionViewCell.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		CEE9DA8728D45D3400AA5CD5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CED79AE728C4C16D0042BD32 /* Music.swift */,
+				CED79AE128C357610042BD32 /* MusicEnum.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,8 +202,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CED79ADC28C357210042BD32 /* Miyagi & Andy Panda - Там ревели горы.mp3 in Resources */,
 				CED79AD128C2591E0042BD32 /* LaunchScreen.storyboard in Resources */,
+				CEDD598528D4684100451E21 /* Miyagi & Andy Panda - Там ревели горы.mp3 in Resources */,
 				CED79AE028C3573D0042BD32 /* Jason Derulo feat. Snoop Dogg - Wiggle (feat. Snoop Dogg).mp3 in Resources */,
 				CED79ADE28C3572A0042BD32 /* Nicki Minaj, Labrinth feat. Eminem - Majesty.mp3 in Resources */,
 				CED79ACE28C2591E0042BD32 /* Assets.xcassets in Resources */,
@@ -342,7 +374,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MusicPlayerTestProject/Info.plist;
+				INFOPLIST_FILE = MusicPlayerTestProject/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -370,7 +402,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MusicPlayerTestProject/Info.plist;
+				INFOPLIST_FILE = MusicPlayerTestProject/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
