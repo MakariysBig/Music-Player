@@ -19,7 +19,9 @@
 		CED79AE628C366BF0042BD32 /* MainViewController+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED79AE528C366BF0042BD32 /* MainViewController+Views.swift */; };
 		CED79AE828C4C16D0042BD32 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED79AE728C4C16D0042BD32 /* Music.swift */; };
 		CED79AEA28C8A7C60042BD32 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED79AE928C8A7C60042BD32 /* CustomCollectionViewCell.swift */; };
+		CEDC39D828E4795F0019C1F2 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC39D728E4795F0019C1F2 /* CustomColor.swift */; };
 		CEDD598528D4684100451E21 /* Miyagi & Andy Panda - Там ревели горы.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CEDD598428D4684100451E21 /* Miyagi & Andy Panda - Там ревели горы.mp3 */; };
+		CEF9952A28DDB69500324243 /* MusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF9952928DDB69500324243 /* MusicManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +39,9 @@
 		CED79AE528C366BF0042BD32 /* MainViewController+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Views.swift"; sourceTree = "<group>"; };
 		CED79AE728C4C16D0042BD32 /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
 		CED79AE928C8A7C60042BD32 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		CEDC39D728E4795F0019C1F2 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		CEDD598428D4684100451E21 /* Miyagi & Andy Panda - Там ревели горы.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Miyagi & Andy Panda - Там ревели горы.mp3"; sourceTree = "<group>"; };
+		CEF9952928DDB69500324243 /* MusicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,11 +74,13 @@
 		CED79AC328C259170042BD32 /* MusicPlayerTestProject */ = {
 			isa = PBXGroup;
 			children = (
-				CEDD598228D4666600451E21 /* Delegates */,
-				CEE9DA8728D45D3400AA5CD5 /* Models */,
-				CED79AE328C366750042BD32 /* ViewControllers */,
-				CEE9DA8528D45C9E00AA5CD5 /* CustomCells */,
-				CEDD598328D466D100451E21 /* SupportingFiles */,
+				CEDD598228D4666600451E21 /* Delegate */,
+				CEDC39DA28E47C5D0019C1F2 /* Manager */,
+				CEE9DA8728D45D3400AA5CD5 /* Model */,
+				CED79AE328C366750042BD32 /* ViewController */,
+				CEE9DA8528D45C9E00AA5CD5 /* CustomCell */,
+				CEDD598328D466D100451E21 /* SupportingFile */,
+				CEDC39D928E47C200019C1F2 /* UIColor+Extension */,
 			);
 			path = MusicPlayerTestProject;
 			sourceTree = "<group>";
@@ -89,13 +95,13 @@
 			path = MusicAssets;
 			sourceTree = "<group>";
 		};
-		CED79AE328C366750042BD32 /* ViewControllers */ = {
+		CED79AE328C366750042BD32 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				CED79AE428C366860042BD32 /* ViewController+Exteinsion */,
 				CED79AC828C259170042BD32 /* MainViewController.swift */,
 			);
-			path = ViewControllers;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		CED79AE428C366860042BD32 /* ViewController+Exteinsion */ = {
@@ -106,16 +112,32 @@
 			path = "ViewController+Exteinsion";
 			sourceTree = "<group>";
 		};
-		CEDD598228D4666600451E21 /* Delegates */ = {
+		CEDC39D928E47C200019C1F2 /* UIColor+Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CEDC39D728E4795F0019C1F2 /* CustomColor.swift */,
+			);
+			path = "UIColor+Extension";
+			sourceTree = "<group>";
+		};
+		CEDC39DA28E47C5D0019C1F2 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				CEF9952928DDB69500324243 /* MusicManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		CEDD598228D4666600451E21 /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
 				CED79AC428C259170042BD32 /* AppDelegate.swift */,
 				CED79AC628C259170042BD32 /* SceneDelegate.swift */,
 			);
-			path = Delegates;
+			path = Delegate;
 			sourceTree = "<group>";
 		};
-		CEDD598328D466D100451E21 /* SupportingFiles */ = {
+		CEDD598328D466D100451E21 /* SupportingFile */ = {
 			isa = PBXGroup;
 			children = (
 				CED79ADA28C356FC0042BD32 /* MusicAssets */,
@@ -124,24 +146,24 @@
 				CED79ACD28C2591E0042BD32 /* Assets.xcassets */,
 				CED79ACF28C2591E0042BD32 /* LaunchScreen.storyboard */,
 			);
-			path = SupportingFiles;
+			path = SupportingFile;
 			sourceTree = "<group>";
 		};
-		CEE9DA8528D45C9E00AA5CD5 /* CustomCells */ = {
+		CEE9DA8528D45C9E00AA5CD5 /* CustomCell */ = {
 			isa = PBXGroup;
 			children = (
 				CED79AE928C8A7C60042BD32 /* CustomCollectionViewCell.swift */,
 			);
-			path = CustomCells;
+			path = CustomCell;
 			sourceTree = "<group>";
 		};
-		CEE9DA8728D45D3400AA5CD5 /* Models */ = {
+		CEE9DA8728D45D3400AA5CD5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				CED79AE728C4C16D0042BD32 /* Music.swift */,
 				CED79AE128C357610042BD32 /* MusicEnum.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +241,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CED79AE228C357620042BD32 /* MusicEnum.swift in Sources */,
+				CEF9952A28DDB69500324243 /* MusicManager.swift in Sources */,
+				CEDC39D828E4795F0019C1F2 /* CustomColor.swift in Sources */,
 				CED79AEA28C8A7C60042BD32 /* CustomCollectionViewCell.swift in Sources */,
 				CED79AC928C259170042BD32 /* MainViewController.swift in Sources */,
 				CED79AE628C366BF0042BD32 /* MainViewController+Views.swift in Sources */,

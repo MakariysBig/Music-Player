@@ -1,5 +1,4 @@
 import UIKit
-import AVFoundation
 
 extension MainViewController {
     final class Views {
@@ -9,39 +8,31 @@ extension MainViewController {
         let playButton = UIButton()
         let forwardButton = UIButton()
         let backwardButton = UIButton()
-        
-        var numberOfMusic = 0
-        var player: AVAudioPlayer?
-        lazy var musicClass = [miyagi, snoopDoogg, nickiMinaj]
-        
+        let fullTimeOfSong = UILabel()
+        let correctTimeOfSong = UILabel()
+        let songName = UILabel()
+        let artistName = UILabel()
+        let slider = UISlider()
+
         //MARK: - Private properties
         
         private let songDescription = UIStackView()
         private let songTime = UIStackView()
-        private let fullTimeOfSong = UILabel()
-        private let correctTimeOfSong = UILabel()
-        private let songName = UILabel()
-        private let artistName = UILabel()
         private let circle = UILabel()
-        private let slider = UISlider()
-        
-        private var timer: Timer?
         
         //MARK: - Methods
         
         func loadViews(_ view: UIView) {
-            configurePlayer(numberOfMusic: numberOfMusic)
-            setUpSongDesctiptionLayout(view, numberOfMusic: numberOfMusic)
+            setUpSongDesctiptionLayout(view)
             setUpSliderLayout(view)
             setUpCircle(view)
             setUpPlayButtonLayout(view)
             setUpSongTimeLayout(view)
-            configureTimer()
             setUpForwardButtonLayout(view)
             setUpBackwardButtonLayout(view)
         }
         
-        func setUpSongDesctiptionLayout(_ view: UIView, numberOfMusic: Int) {
+        func setUpSongDesctiptionLayout(_ view: UIView) {
             view.addSubview(songDescription)
             
             songDescription.axis = .vertical
@@ -49,11 +40,9 @@ extension MainViewController {
             songDescription.addArrangedSubview(artistName)
             songDescription.translatesAutoresizingMaskIntoConstraints = false
             
-            songName.text = musicClass[numberOfMusic].nameMusic
             songName.textColor = .white
             songName.font = UIFont.boldSystemFont(ofSize: 25)
             
-            artistName.text = musicClass[numberOfMusic].nameArtist
             artistName.textColor = .systemGray
             
             NSLayoutConstraint.activate([
@@ -63,25 +52,7 @@ extension MainViewController {
             ])
         }
         
-        func configurePlayer(numberOfMusic: Int) {
-            let urlString = Bundle.main.path(forResource: musicClass[numberOfMusic].audio, ofType: "mp3")
-            guard let urlString = urlString else { return }
-            
-            do {
-                try AVAudioSession.sharedInstance().setMode(.default)
-                try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
-                
-                player = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: urlString))
-            } catch {
-                print("ViewController-AVAudioSession-failed")
-            }
-        }
-        
         //MARK: - Private methods
-        
-        private func configureTimer() {
-            timer = Timer.scheduledTimer(timeInterval: 0.0001, target: self, selector: #selector(updateSlider), userInfo: nil, repeats: true)
-        }
         
         private func setUpSongTimeLayout(_ view: UIView) {
             view.addSubview(songTime)
@@ -104,7 +75,8 @@ extension MainViewController {
         
         private func setUpCircle(_ view: UIView) {
             view.addSubview(circle)
-            circle.backgroundColor = UIColor(red: 34/255, green: 28/255, blue: 42/255, alpha: 1)
+            
+            circle.backgroundColor = .myCircleColor
             circle.translatesAutoresizingMaskIntoConstraints = false
             circle.layer.cornerRadius = 33
             circle.clipsToBounds = true
@@ -120,11 +92,8 @@ extension MainViewController {
         private func setUpSliderLayout(_ view: UIView) {
             view.addSubview(slider)
             
-            guard let player = player else { return }
-            
             slider.value = 0.0
-            slider.maximumValue = Float(player.duration)
-            slider.tintColor = UIColor(red: 130/255, green: 87/255, blue: 231/255, alpha: 1)
+            slider.tintColor = .mySliderColor
             slider.setThumbImage(UIImage(named: "Ellipses"), for: .normal)
             slider.translatesAutoresizingMaskIntoConstraints = false
             
@@ -134,7 +103,6 @@ extension MainViewController {
                 slider.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
                 slider.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             ])
-            slider.addTarget(self, action: #selector(scrubbingSlider), for: .valueChanged)
         }
         
         private func setUpForwardButtonLayout(_ view: UIView) {
@@ -180,47 +148,6 @@ extension MainViewController {
                 playButton.heightAnchor.constraint(equalToConstant: 36),
                 playButton.widthAnchor.constraint(equalToConstant: 36),
             ])
-        }
-        
-        private func getFormattedTime(timeInterval: TimeInterval) -> String {
-            let mins = timeInterval / 60
-            let secs = timeInterval.truncatingRemainder(dividingBy: 60)
-            
-            let timeFormatterForMinutes = NumberFormatter()
-            timeFormatterForMinutes.maximumIntegerDigits = 2
-            timeFormatterForMinutes.minimumFractionDigits = 0
-            timeFormatterForMinutes.roundingMode = .down
-            
-            let timeFormatterForSeconds = NumberFormatter()
-            timeFormatterForSeconds.maximumIntegerDigits = 2
-            timeFormatterForSeconds.minimumFractionDigits = 0
-            timeFormatterForSeconds.minimumIntegerDigits = 2
-            timeFormatterForSeconds.roundingMode = .down
-            
-            guard let minsStr = timeFormatterForMinutes.string(from: NSNumber(value: mins)),
-                  let secsStr = timeFormatterForSeconds.string(from: NSNumber(value: secs)) else {
-                      return ""
-                  }
-            return "\(minsStr):\(secsStr)"
-        }
-        
-        
-        //MARK: - Action
-        
-        @objc private func updateSlider() {
-            guard let player = player else { return }
-            slider.value = Float(player.currentTime)
-            slider.maximumValue = Float(player.duration)
-            
-            let remainingTimeInSconds = player.duration - player.currentTime
-            correctTimeOfSong.text = getFormattedTime(timeInterval: player.currentTime)
-            fullTimeOfSong.text = getFormattedTime(timeInterval: remainingTimeInSconds)
-        }
-        
-        @objc private func scrubbingSlider() {
-            guard let player = player else { return }
-            player.currentTime = Float64(slider.value)
-            player.play()
         }
     }
 }
