@@ -7,7 +7,6 @@ final class MainViewController: UIViewController {
     private let views = Views()
     private let layout = UICollectionViewFlowLayout()
     private let musicManager = MusicManager()
-    private var index = 0
     private var timer: Timer?
     
     //MARK: - Override properties
@@ -25,7 +24,7 @@ final class MainViewController: UIViewController {
         views.loadViews(view)
         setUpTarget()
         setUpCollectionViewLayout()
-        musicManager.setUpPlayer()
+        musicManager.configurePlayer(numberOfMusic: musicManager.numberOfMusic)
         setUpMaximumValueForSlider()
         configureTimer()
     }
@@ -45,9 +44,9 @@ final class MainViewController: UIViewController {
     }
     
     private func setUpMaximumValueForSlider() {
-        guard let player = musicManager.player else { return }
+        guard musicManager.isConfigured else { return }
         
-        views.slider.maximumValue = Float(player.duration)
+        views.slider.maximumValue = Float(musicManager.duration)
     }
     
     private func setUpCollectionViewLayout() {
@@ -56,6 +55,7 @@ final class MainViewController: UIViewController {
         layout.itemSize = UICollectionViewFlowLayout.automaticSize
         layout.sectionInset.left = 40
         layout.sectionInset.right = 80
+        layout.minimumLineSpacing = 0
 
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.addSubview(collectionView)
@@ -76,18 +76,18 @@ final class MainViewController: UIViewController {
     }
     
     private func configureTrack() {
-        let indexPath = IndexPath(row: index, section: 0)
+        let indexPath = IndexPath(row: musicManager.numberOfMusic, section: 0)
         layout.collectionView?.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         
         musicManager.configurePlayer(numberOfMusic: musicManager.numberOfMusic)
         configureSongDesctiption()
 
-        guard let player = musicManager.player else { return }
+        guard musicManager.isConfigured else { return }
         
         if views.playButton.isSelected {
-            player.play()
+            musicManager.play()
         } else {
-            player.stop()
+            musicManager.stop()
         }
     }
     
@@ -120,18 +120,20 @@ final class MainViewController: UIViewController {
     //MARK: - Action
     
     @objc private func scrubbingSlider() {
-        guard let player = musicManager.player else { return }
-        player.currentTime = Float64(views.slider.value)
-        player.play()
+        guard musicManager.isConfigured else { return }
+        
+        musicManager.currentTime = TimeInterval(views.slider.value)
+        musicManager.play()
     }
     
     @objc private func updateSlider() {
-        guard let player = musicManager.player else { return }
-        views.slider.value = Float(player.currentTime)
-        views.slider.maximumValue = Float(player.duration)
+        guard musicManager.isConfigured else { return }
         
-        let remainingTimeInSconds = player.duration - player.currentTime
-        views.correctTimeOfSong.text = getFormattedTime(timeInterval: player.currentTime)
+        views.slider.value = Float(musicManager.currentTime)
+        views.slider.maximumValue = Float(musicManager.duration)
+        
+        let remainingTimeInSconds = musicManager.duration - musicManager.currentTime
+        views.correctTimeOfSong.text = getFormattedTime(timeInterval: musicManager.currentTime)
         views.fullTimeOfSong.text = getFormattedTime(timeInterval: remainingTimeInSconds)
     }
     
@@ -140,10 +142,8 @@ final class MainViewController: UIViewController {
         
         if musicManager.numberOfMusic < count {
             musicManager.numberOfMusic += 1
-            index += 1
         } else {
             musicManager.numberOfMusic = 0
-            index = 0
         }
         configureTrack()
     }
@@ -153,23 +153,21 @@ final class MainViewController: UIViewController {
 
         if musicManager.numberOfMusic == 0 {
             musicManager.numberOfMusic = count
-            index = count
         } else if musicManager.numberOfMusic <= count {
             musicManager.numberOfMusic -= 1
-            index -= 1
         }
         configureTrack()
     }
     
     @objc private func tapPlayButton() {
-        guard let player = musicManager.player else { return }
+        guard musicManager.isConfigured else { return }
 
-        if player.isPlaying {
-            player.pause()
+        if musicManager.isPlaying {
+            musicManager.pause()
             views.playButton.setBackgroundImage(UIImage(systemName: "play.fill"), for: .normal)
             views.playButton.isSelected = false
         } else {
-            player.play()
+            musicManager.play()
             views.playButton.setBackgroundImage(UIImage(systemName: "pause.fill"), for: .normal)
             views.playButton.isSelected = true
         }
@@ -202,8 +200,8 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         targetContentOffset.pointee = scrollView.contentOffset
-        let indexPath = IndexPath(row: index, section: 0)
-        
+        let indexPath = IndexPath(row: musicManager.numberOfMusic, section: 0)
+
         layout.collectionView?.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
 }

@@ -41,9 +41,9 @@ final class CustomCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(coverView)
         
         coverView.layer.borderWidth = 1
-        coverView.layer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.1).cgColor
+        coverView.layer.borderColor = UIColor.myBorderColor.cgColor
         coverView.layer.cornerRadius = 10
-        coverView.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.05)
+        coverView.backgroundColor = .myBackgroundForCell
         coverView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([

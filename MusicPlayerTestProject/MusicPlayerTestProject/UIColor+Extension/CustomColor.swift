@@ -13,4 +13,13 @@ extension UIColor {
     final class var mySliderColor: UIColor {
         return UIColor(red: 130/255, green: 87/255, blue: 231/255, alpha: 1)
     }
+    
+    final class var myBackgroundForCell: UIColor {
+        return UIColor(red: 1, green: 1, blue: 1, alpha: 0.05)
+    }
+    final class var myBorderColor: UIColor {
+        return UIColor(red: 1, green: 1, blue: 1, alpha: 0.1)
+    }
 }
+
+
