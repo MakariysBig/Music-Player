@@ -21,14 +21,29 @@ final class MusicManager {
     //MARK: - Properties
     
     var numberOfMusic = 0
-    var player: AVAudioPlayer?
+    private var player: AVAudioPlayer?
     lazy var musicClass = [miyagi, snoopDoogg, nickiMinaj]
     
-    //MARK: - Methods
-    
-    func setUpPlayer() {
-        configurePlayer(numberOfMusic: numberOfMusic)
+    var duration: TimeInterval {
+        return player?.duration ?? 0
     }
+    
+    var isPlaying: Bool {
+        return player?.isPlaying == true
+    }
+    
+    var currentTime: TimeInterval {
+        get {
+            player?.currentTime ?? 0
+        }
+        set {
+            player?.currentTime = newValue
+        }
+    }
+    
+    var isConfigured: Bool { player != nil }
+    
+    //MARK: - Methods
 
     func configurePlayer(numberOfMusic: Int) {
         let urlString = Bundle.main.path(forResource: musicClass[numberOfMusic].audio, ofType: "mp3")
@@ -42,5 +57,17 @@ final class MusicManager {
         } catch {
             print("ViewController-AVAudioSession-failed")
         }
+    }
+    
+    func play() {
+        player?.play()
+    }
+    
+    func stop() {
+        player?.stop()
+    }
+    
+    func pause() {
+        player?.pause()
     }
 }
